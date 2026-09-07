@@ -33,9 +33,9 @@ The system is designed around a clean class hierarchy so that every core OOP pri
 | Class(es) | Owner | OOP Principle Demonstrated | Description |
 |---|---|---|---|
 | `Product` | Muhammad Sydul Islam | Encapsulation | Manages product details, pricing, and stock, with private fields and controlled access via getters/setters |
-| `User` (abstract), `Customer` | Ainun Nahar Kona | Inheritance, Abstraction | Defines shared user behavior in an abstract base class, extended by `Customer` |
+| `User` (abstract), `Customer` | Sadia Islam Sinthya | Inheritance, Abstraction | Defines shared user behavior in an abstract base class, extended by `Customer` |
 | `Order` | Saidur Rahman Joy | Aggregation / composition of core entities | Links a `Customer`, one or more `Product`s, and a `PaymentMethod` into a single transaction |
-| `PaymentMethod` (interface), `CashPayment`, `MobilePayment` | Sadia Islam Sinthya | Polymorphism | A shared interface implemented differently by each payment type, allowing `Order` to process payments without knowing the exact implementation |
+| `PaymentMethod` (interface), `CashPayment`, `MobilePayment` | Ainun Nahar Kona | Polymorphism | A shared interface implemented differently by each payment type, allowing `Order` to process payments without knowing the exact implementation |
 
 ---
 
