@@ -19,8 +19,8 @@ The system is designed around a clean class hierarchy so that every core OOP pri
 
 ## 📊 UML Class Diagram
 
-![UML Class Diagram](java project diagram.jpeg
-)
+![UML Class Diagram](https://github.com/arponofcl27/Online-Shop-Management-System/blob/main/java%20project%20diagram.jpeg)
+
 
 The diagram above shows the full class structure, including inheritance (`User` → `Customer`), interface realization (`PaymentMethod` → `CashPayment`, `MobilePayment`), and the composition relationship between `Customer` and `Product`.
 
