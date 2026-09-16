@@ -17,6 +17,14 @@ The system is designed around a clean class hierarchy so that every core OOP pri
 
 ---
 
+## 📊 UML Class Diagram
+
+![UML Class Diagram](Online_Shop_UML_Diagram.png)
+
+The diagram above shows the full class structure, including inheritance (`User` → `Customer`), interface realization (`PaymentMethod` → `CashPayment`, `MobilePayment`), and the composition relationship between `Customer` and `Product`.
+
+---
+
 ## 👥 Team Members
 
 | # | Name | Student ID | GitHub |
@@ -35,7 +43,7 @@ The system is designed around a clean class hierarchy so that every core OOP pri
 | `Product` | Saidur Rahman Joy | Encapsulation | Manages product details, pricing, and stock, with private fields and controlled access via getters/setters |
 | `User` (abstract), `Customer` | Sadia Islam Sinthya | Inheritance, Abstraction | Defines shared user behavior in an abstract base class, extended by `Customer` |
 | `Order` | Muhammad Sydul Islam | Aggregation / composition of core entities | Links a `Customer`, one or more `Product`s, and a `PaymentMethod` into a single transaction |
-| `PaymentMethod` (interface), `CashPayment`, `MobilePayment` | Ainun Nahar Kona | Polymorphism | A shared interface implemented differently by each payment type, allowing `Order` to process payments without knowing the exact implementation |
+| `PaymentMethod` (interface), `CashPayment`, `MobilePayment` | Ainun Nahar Kona| Polymorphism | A shared interface implemented differently by each payment type, allowing `Order` to process payments without knowing the exact implementation |
 
 ---
 
