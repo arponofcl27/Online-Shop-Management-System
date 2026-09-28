@@ -1,0 +1,102 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+
+    private String orderId;
+    private Customer customer;
+    private List<Product> products;
+    private double totalAmount;
+    private String orderStatus;
+
+    public Order(String orderId, Customer customer) {
+
+        this.orderId = orderId;
+        this.customer = customer;
+        this.products = new ArrayList<>();
+        this.totalAmount = 0;
+        this.orderStatus = "PENDING";
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void addProduct(Product product) {
+
+        if (product != null) {
+            products.add(product);
+            calculateTotal();
+        }
+    }
+
+    public void calculateTotal() {
+
+        totalAmount = 0;
+
+        for (Product product : products) {
+            totalAmount += product.getPrice();
+        }
+    }
+
+    public boolean checkout(PaymentMethod paymentMethod) {
+
+        if (products.isEmpty()) {
+            return false;
+        }
+
+        if (paymentMethod == null) {
+            return false;
+        }
+
+        calculateTotal();
+
+        boolean paymentSuccessful =
+                paymentMethod.pay(totalAmount);
+
+        if (paymentSuccessful) {
+            orderStatus = "CONFIRMED";
+            return true;
+        }
+
+        return false;
+    }
+
+    public void cancelOrder() {
+
+        if (!orderStatus.equals("CONFIRMED")) {
+            orderStatus = "CANCELLED";
+        }
+    }
+
+    public void displayOrder() {
+
+        System.out.println("Order ID: " + orderId);
+        System.out.println("Customer: " + customer.getName());
+        System.out.println("Status: " + orderStatus);
+
+        System.out.println("Products:");
+
+        for (Product product : products) {
+            System.out.println(product);
+        }
+
+        System.out.println("Total Amount: $" + totalAmount);
+    }
+}
